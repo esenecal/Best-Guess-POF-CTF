@@ -2,14 +2,14 @@
 
 ## How to run this CTF
 
-Download the `pof-gof-ctf.tar` file. Ensure that Docker is running.
+Clone or download this repository to your computer. Ensure Docker is running. Navigate to this repository's home directory.
 
-Import the image by running:
+Build the Docker image by using
 ```bash
-docker load < pof-gof-ctf.tar
+docker build -t 266pof/pof-gof-ctf .
 ```
 
-This will load the docker image.
+This will create a Docker image. It may take some time, as it is installing a lot of packages.
 
 Run the image with:
 ```bash
@@ -44,13 +44,13 @@ It should be noted that the operating systems that recorded these .pcap files ar
 - Check analysis on TCP and DNS packets
 - You may need to check a fingerprint database by hand... try looking at the satori databases [here](https://github.com/xnih/satori).
 
-## How was this Docker Container Made?
+## Docker Commands Explained
 
 Fun little FYI for anyone interested:
 
 The `Dockerfile` contains directions for creating a docker image. It creates a base `Ubuntu 24.04` image, imports a bunch of packages, and then copies over directories from this repository. The image can be built with `docker build -t 266pof/pof-gof-ctf .`, which builds the image and tags it "`266pof/pof-gof-ctf`".
 
-The Dockerfile can then be exported using `docker save 266pof/pof-gof-ctf:latest > pof-gof-ctf.tar`, which creates the tar file that can be used to import the image, as used above.
+The Dockerfile can then be exported using `docker save 266pof/pof-gof-ctf:latest > pof-gof-ctf.tar`, which was not done here due to GitHub's size limits.
 
 ## Sources/Resources:
 - https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/
