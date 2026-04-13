@@ -9,7 +9,7 @@ Build the Docker image by using
 docker build -t 266pof/bg-pof-ctf .
 ```
 
-This will create a Docker image. It may take some time, as it is installing a lot of packages.
+This will create a Docker image with the CTF files, satori, and the proper packages.
 
 Run the image with:
 ```bash
