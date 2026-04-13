@@ -1,4 +1,4 @@
-# General OS Fingerprint
+# Best Guess POF CTF
 
 ## How to run this CTF
 
@@ -6,21 +6,21 @@ Clone or download this repository to your computer. Ensure Docker is running. Na
 
 Build the Docker image by using
 ```bash
-docker build -t 266pof/pof-gof-ctf .
+docker build -t 266pof/bg-pof-ctf .
 ```
 
 This will create a Docker image. It may take some time, as it is installing a lot of packages.
 
 Run the image with:
 ```bash
-docker run -it --name pof-gof-ctf 266pof/pof-gof-ctf
+docker run -it --name bg-pof-ctf 266pof/bg-pof-ctf
 ```
 
-This will create a docker container named `pof-gof-ctf` and open it as an interactive terminal.
+This will create a docker container named `bg-pof-ctf` and open it as an interactive terminal.
 
 To exit the terminal type exit. This will also stop the docker container.
 
-To start the container (AFTER you have created it with `docker run`) in an interactive terminal, run `docker container start -i pof-gof-ctf`. If you ever accidently run or start the container without `-it` (for `docker run`) or `-i` (for `docker container`), the container will start without the terminal. Simply stop it with `docker container stop pof-gof-ctf`, and then start it with the `docker container start` command above.
+To start the container (AFTER you have created it with `docker run`) in an interactive terminal, run `docker container start -i bg-pof-ctf`. If you ever accidently run or start the container without `-it` (for `docker run`) or `-i` (for `docker container`), the container will start without the terminal. Simply stop it with `docker container stop bg-pof-ctf`, and then start it with the `docker container start` command above.
 
 The following directions are within the docker image at the `/pof-ctf` directory:
 
@@ -41,14 +41,14 @@ To verify you received the correct hash, run `python3 verify-flag.py <flag>`, wh
 It should be noted that the operating systems that recorded these .pcap files are not necessarily the OS and version the .pcap files suggest! Passive OS fingerprinting is not as accurate as other fingerprinting methods, and in some cases, what satori guesses the OS is is wildly off.
 
 **HINTS**
-- Check analysis on TCP and DNS packets
+- Check analysis on TCP and DNS packets.
 - You may need to check a fingerprint database by hand... try looking at the satori databases [here](https://github.com/xnih/satori).
 
 ## Docker Commands Explained
 
 Fun little FYI for anyone interested:
 
-The `Dockerfile` contains directions for creating a docker image. It creates a base `Ubuntu 24.04` image, imports a bunch of packages, and then copies over directories from this repository. The image can be built with `docker build -t 266pof/pof-gof-ctf .`, which builds the image and tags it "`266pof/pof-gof-ctf`".
+The `Dockerfile` contains directions for creating a docker image. It creates a base `Ubuntu 24.04` image, imports a bunch of packages, and then copies over directories from this repository. The image can be built with `docker build -t 266pof/bg-pof-ctf .`, which builds the image and tags it "`266pof/bg-pof-ctf`".
 
 The Dockerfile can then be exported using `docker save 266pof/pof-gof-ctf:latest > pof-gof-ctf.tar`, which was not done here due to GitHub's size limits.
 

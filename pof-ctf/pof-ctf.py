@@ -5,7 +5,7 @@ import hashlib
 q1_correct = False
 q2_correct = False
 
-print("Welcome to the General OS Fingerprinting CTF, part of the Cyber-266 Vulnerability Walkthrough Wiki.")
+print("Welcome to the Best Guess POF CTF, part of the Cyber-266 Vulnerability Walkthrough Wiki.")
 print("Respond to the following questions. If both are answered correctly, the flag will be given. You will be told which is incorrect.")
 print()
 
@@ -46,7 +46,7 @@ else:
 
 print()
 if(q1_correct and q2_correct):
-    print("266_ctf{os_fingerprint_007990cc124a}")
+    print("itc266{bg_pof_jmsdr893u}")
 else:
     print("Try again!")
 
