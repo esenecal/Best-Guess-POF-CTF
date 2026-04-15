@@ -20,9 +20,11 @@ docker run -it --name bg-pof-ctf 266pof/bg-pof-ctf
 
 This will create a docker container named `bg-pof-ctf` and open it as an interactive terminal.
 
-To exit the terminal type exit. This will also stop the docker container.
+To exit the terminal type `exit`. This will also stop the docker container.
 
 To start the container (AFTER you have created it with `docker run`) in an interactive terminal, run `docker container start -i bg-pof-ctf`. If you ever accidently run or start the container without `-it` (for `docker run`) or `-i` (for `docker container`), the container will start without the terminal. Simply stop it with `docker container stop bg-pof-ctf`, and then start it with the `docker container start` command above.
+
+You can delete the container and image with Docker Desktop
 
 The following directions are within the docker image at the `/pof-ctf` directory:
 
@@ -33,18 +35,18 @@ Within this docker container there are two directories of note: `/pof-ctf` and `
 Run `pof-ctf.py` with python: `python3 pof-ctf.py`. It will ask several questions about the pcap files and provide the flag when complete.
 
 These are the questions asked `pof-ctf.py`:
-1. (machine1.pcap) What is ONE potential operating system running on THIS machine (check the local IP)? Answer with version numbers (example: Windows XP - 0000, Linux Mint 22.x)
-2. (machine2.pcap) What is your best guess of the operating system running on this machine? Answer with version numbers (example: Windows XP - 0000, Linux Mint 22.x)
+1. (machine1.pcap) What is one potential operating system running on the machine that made this pcap (check the local IP)? Answer with version numbers (example: Windows XP - 0000, Linux Mint 22.x)
+2. (machine2.pcap) What is your best guess of the operating system running on the machine that made this pcap? Answer with version numbers (example: Windows XP - 0000, Linux Mint 22.x)
 
 Ensure answers are formatted like the examples given.
 
-To verify you received the correct hash, run `python3 verify-flag.py <flag>`, where `<flag>` is replaced by the CTF flag, without the `<>`.
+To verify you received the correct hash, run `python3 /pof-ctf/verify-flag.py <flag>`, where `<flag>` is replaced by the CTF flag, without the `<>`.
 
 It should be noted that the operating systems that recorded these .pcap files are not necessarily the OS and version the .pcap files suggest! Passive OS fingerprinting is not as accurate as other fingerprinting methods, and in some cases, what satori guesses the OS is is wildly off.
 
 **HINTS**
 - Check analysis on TCP and DNS packets.
-- You may need to check a fingerprint database by hand... try looking at the satori databases [here](https://github.com/xnih/satori).
+- You may need to check a fingerprint database by hand... try looking at the satori fingerprint databases [here](https://github.com/xnih/satori/tree/master/fingerprints).
 
 ## Docker Commands Explained
 

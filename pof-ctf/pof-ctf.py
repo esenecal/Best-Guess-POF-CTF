@@ -11,7 +11,7 @@ print()
 
 # Question 1. Loop until they get it right.
 print("---- Analyze machine1.pcap ----")
-print("What is one potential operating system running on THIS machine (check the local IP)? Answer with version numbers (example: Windows XP - 0000, Linux Mint 22.x)")
+print("What is one potential operating system running on the machine that made this pcap (check the local IP)? Answer with version numbers (example: Windows XP - 0000, Linux Mint 22.x)")
 q1_answer = input()        # get user input.
 
 # hash the answer and compare with hashes of correct answers.
@@ -23,6 +23,7 @@ if(m.hexdigest() == "e23a908b084629a23959b424511f1bc14634158d55eae27a1b9f5545f2f
     m.hexdigest() == "56b74ace4b4701f19ea4a778c2062065835d9c1b6f33dba980550e7e5ea79d10"
     ):
     q1_correct = True
+    print("Correct!")
 else:
     print("Incorrect.")
     
@@ -30,7 +31,7 @@ print()
 
 # Question 2.
 print("---- Analyze machine2.pcap ----")
-print("What is your best guess of the operating system running on this machine? Answer with version numbers (example: Windows XP - 0000, Linux Mint 22.x)")
+print("What is your best guess of the operating system running on the machine that made this pcap? Answer with version numbers (example: Windows XP - 0000, Linux Mint 22.x)")
 
 q2_answer = input()        # get user input.
 
@@ -41,11 +42,13 @@ if(d.hexdigest() == "ef3a312cfef03908fc63b1ab55f3b7750f74ec06eaf8ab36167c91a6920
     d.hexdigest() == "816e4d0834b276873de4185ac1902b930eea4b7c1d1c6c93284c51c08525a9448074fa3a35959d843e8171d33b04d547"
     ):
     q2_correct = True
+    print("Correct!")
 else:
     print("Incorrect.")
 
 print()
 if(q1_correct and q2_correct):
+    print("Here's the flag:")
     print("itc266{bg_pof_jmsdr893u}")
 else:
     print("Try again!")
