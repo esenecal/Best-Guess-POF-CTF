@@ -1,5 +1,7 @@
 # Best Guess POF CTF
 
+**It is highly recommended that you read the section "Using satori" in the walkthrough [here](https://github.com/BYU-ECE-Software/Cyber-266-Vulnerability-Walkthroughs/tree/main/Passive-OS-Fingerprinting).** It will go over what needs to be known for this CTF.
+
 ## How to run this CTF
 
 Clone or download this repository to your computer. Ensure Docker is running. Navigate to this repository's home directory.
